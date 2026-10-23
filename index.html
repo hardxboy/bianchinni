@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bianchinni Barbearia — Tradição & Navalha desde 2012</title>
+<meta name="description" content="Bianchinni Barbearia — cortes clássicos, barba na navalha e o ritual da toalha quente. Agende seu horário.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="is-locked">
+
+<a class="skip" href="#conteudo">Ir para o conteúdo</a>
+
+<!-- grão de filme + vinheta -->
+<div class="grain" aria-hidden="true"></div>
+<div class="vignette" aria-hidden="true"></div>
+
+<!-- ================= SPRITE SVG: brasão da Bianchinni =================
+     Para usar a arte final da logo, substitua o conteúdo deste <symbol>. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="crest" viewBox="0 0 420 420">
+    <defs>
+      <path id="c-arcTop" d="M 46,210 A 164,164 0 0 1 374,210"/>
+      <path id="c-arcBot" d="M 56,210 A 154,154 0 0 0 364,210"/>
+      <path id="c-leaf" d="M0,0 C7,-4 11,-13 8,-24 C1,-17 -3,-8 0,0 Z"/>
+      <path id="c-star" d="M0,-8 C1.4,-2.6 2.6,-1.4 8,0 C2.6,1.4 1.4,2.6 0,8 C-1.4,2.6 -2.6,1.4 -8,0 C-2.6,-1.4 -1.4,-2.6 0,-8 Z"/>
+    </defs>
+    <circle cx="210" cy="210" r="204" fill="none" stroke="currentColor" stroke-width="3"/>
+    <circle cx="210" cy="210" r="193" fill="none" stroke="currentColor" stroke-width="1"/>
+    <circle cx="210" cy="210" r="120" fill="none" stroke="currentColor" stroke-width="1.4"/>
+    <text font-family="Cinzel, serif" font-size="32" font-weight="600" letter-spacing="6" fill="currentColor">
+      <textPath href="#c-arcTop" startOffset="50%" text-anchor="middle">BIANCHINNI</textPath>
+    </text>
+    <text font-family="Cinzel, serif" font-size="20" font-weight="500" letter-spacing="11" fill="currentColor">
+      <textPath href="#c-arcBot" startOffset="50%" text-anchor="middle">BARBEARIA</textPath>
+    </text>
+    <use href="#c-star" transform="translate(36,210) scale(.85)"/>
+    <use href="#c-star" transform="translate(384,210) scale(.85)"/>
+    <!-- navalha clássica -->
+    <g fill="none" stroke="currentColor" transform="translate(210,206) rotate(42)">
+      <path d="M-6,-100 L6,-100 L6,34 C6,46 2.5,56 0,61 C-2.5,56 -6,46 -6,34 Z" stroke-width="2.4"/>
+      <path d="M-6,-92 L6,-92" stroke-width="1"/>
+      <path d="M-4,63 L-5,76 L5,76 L4,63" stroke-width="2"/>
+      <circle cx="0" cy="80" r="3" fill="currentColor" stroke="none"/>
+      <path d="M-4,84 C-14,92 -16,106 -9,118 C-5,125 5,125 9,118 C16,106 14,92 4,84 Z" stroke-width="2.4"/>
+      <circle cx="0" cy="100" r="2" stroke-width="1.4"/>
+    </g>
+    <!-- bigode handlebar -->
+    <path fill="currentColor" d="M210,252 C202,240 186,231 168,234 C152,237 140,246 130,256 C121,265 124,276 135,272 C148,267 158,260 172,263 C188,266 200,275 210,275 C220,275 232,266 248,263 C262,260 272,267 285,272 C296,276 299,265 290,256 C280,246 268,237 252,234 C234,231 218,240 210,252 Z"/>
+    <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M134,272 C128,277 121,274 123,267 M286,272 C292,277 299,274 297,267"/>
+    <use href="#c-star" transform="translate(210,166) scale(.7)"/>
+    <text x="210" y="312" text-anchor="middle" font-family="Cinzel, serif" font-size="11" letter-spacing="3" fill="currentColor">EST · MMXII</text>
+    <!-- ramos de louro -->
+    <g id="c-branch">
+      <path d="M152,290 C126,268 108,238 106,196" fill="none" stroke="currentColor" stroke-width="1.4"/>
+      <use href="#c-leaf" transform="translate(149,284) rotate(-122)"/>
+      <use href="#c-leaf" transform="translate(134,272) rotate(-108) scale(.95)"/>
+      <use href="#c-leaf" transform="translate(123,254) rotate(-94) scale(.85)"/>
+      <use href="#c-leaf" transform="translate(114,235) rotate(-80) scale(.8)"/>
+      <use href="#c-leaf" transform="translate(108,215) rotate(-66) scale(.75)"/>
+      <use href="#c-leaf" transform="translate(105,196) rotate(-52) scale(.7)"/>
+    </g>
+    <use href="#c-branch" transform="translate(420,0) scale(-1,1)"/>
+  </symbol>
+</svg>
+
+<!-- ================= PRELOADER / CORTINA ================= -->
+<div class="shutter" id="shutter" aria-hidden="true">
+  <div class="shutter__panel shutter__panel--l"></div>
+  <div class="shutter__panel shutter__panel--r"></div>
+  <div class="shutter__brand">
+    <svg class="crest"><use href="#crest"/></svg>
+    <div class="shutter__name">BIANCHINNI</div>
+    <div class="shutter__sub">barbearia · desde 2012</div>
+    <div class="shutter__bar"><i></i></div>
+  </div>
+</div>
+
+<!-- ================= CABEÇALHO ================= -->
+<header class="header" id="header">
+  <div class="container header__inner">
+    <a class="brand" href="#inicio" aria-label="Bianchinni Barbearia — voltar ao início">
+      <svg class="crest" aria-hidden="true"><use href="#crest"/></svg>
+      <span class="brand__text"><b>BIANCHINNI</b><small>BARBEARIA</small></span>
+    </a>
+    <nav class="nav" aria-label="Navegação principal">
+      <a href="#tradicao">Tradição</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <a class="btn btn--ghost" href="#agendar"><span>Agendar horário</span></a>
+    <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="drawer">
+      <i></i><i></i>
+    </button>
+  </div>
+</header>
+
+<!-- gaveta mobile -->
+<div class="drawer" id="drawer" aria-hidden="true">
+  <div class="drawer__bg" data-drawer-close></div>
+  <nav class="drawer__panel" aria-label="Menu">
+    <a class="dlink" href="#tradicao"><small>01</small> Tradição</a>
+    <a class="dlink" href="#servicos"><small>02</small> Serviços</a>
+    <a class="dlink" href="#galeria"><small>03</small> Galeria</a>
+    <a class="dlink" href="#agendar"><small>04</small> Agendar</a>
+    <a class="dlink" href="#contato"><small>05</small> Contato</a>
+    <div class="drawer__foot">
+      <div class="orn"><i></i></div>
+      <p>Terça a sábado, das 9h às 19h.<br>A café da casa é por nossa conta.</p>
+      <a class="btn btn--solid" href="#agendar" data-drawer-close><span>Agendar horário</span></a>
+    </div>
+  </nav>
+</div>
+
+<main id="conteudo">
+
+  <!-- ================= HERO ================= -->
+  <!-- Troque o src abaixo pela foto real do barbeiro trabalhando -->
+  <section class="hero" id="inicio">
+    <div class="hero__media">
+      <img id="heroImg" src="https://picsum.photos/seed/bianchinni-barber/1800/1100.jpg" alt="Barbeiro trabalhando sob luz dramática na Bianchinni Barbearia" fetchpriority="high">
+    </div>
+    <p class="hero__side" aria-hidden="true">Est. MMXII — Tradição &amp; Navalha</p>
+    <div class="hero__content">
+      <svg class="crest" role="img" aria-label="Brasão da Bianchinni Barbearia"><use href="#crest"/></svg>
+      <h1 class="hero__title"><span class="line"><span>BIANCHINNI</span></span></h1>
+      <div class="hero__word" aria-hidden="true"><span>Barbearia</span></div>
+      <p class="hero__tag">Corte clássico, barba na navalha e o tempo certo para você — uma casa onde a tradição se afia todos os dias.</p>
+      <div class="hero__cta">
+        <a class="btn btn--solid" href="#agendar"><span>Agendar horário</span></a>
+        <a class="btn btn--ghost" href="#servicos"><span>Conhecer serviços</span></a>
+      </div>
+    </div>
+    <a class="hero__scroll" href="#tradicao" aria-label="Rolar para a próxima seção">Role<span aria-hidden="true"><i></i></span></a>
+  </section>
+
+  <!-- faixa correndo -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <div class="marquee__group">
+        <span>Corte clássico</span><i></i><span>Barba na navalha</span><i></i><span>Toalha quente</span><i></i><span>Bigode desenhado</span><i></i><span>Pomada da casa</span><i></i><span>Desde 2012</span><i></i>
+      </div>
+      <div class="marquee__group">
+        <span>Corte clássico</span><i></i><span>Barba na navalha</span><i></i><span>Toalha quente</span><i></i><span>Bigode desenhado</span><i></i><span>Pomada da casa</span><i></i><span>Desde 2012</span><i></i>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= NOSSA TRADIÇÃO ================= -->
+  <section class="section" id="tradicao">
+    <div class="container tradition">
+      <div class="tradition__media" data-rv>
+        <!-- Troque pelas fotos reais da casa -->
+        <div class="frame"><img src="https://picsum.photos/seed/bianchinni-chair/900/1120.jpg" alt="Cadeira clássica da Bianchinni Barbearia" loading="lazy"></div>
+        <div class="tradition__inset"><img src="https://picsum.photos/seed/bianchinni-tools/600/600.jpg" alt="Ferramentas de navalha sobre a bancada" loading="lazy"></div>
+        <p class="tradition__caption">A primeira cadeira da casa, fotografada no dia da inauguração.</p>
+      </div>
+      <div class="tradition__body">
+        <p class="kicker" data-rv><span class="kicker__num">01</span> Nossa tradição</p>
+        <h2 class="h2" data-rv style="--rv-d:.1s">Uma herança<br>cortada na medida</h2>
+        <p class="lead" data-rv style="--rv-d:.18s">Aqui, cada cliente senta na cadeira e sai um pouco melhor do que entrou — no corte e no humor.</p>
+        <p class="body" data-rv style="--rv-d:.26s">A Bianchinni nasceu em 2012 das mãos de Célio Bianchinni, neto de barbeiro italiano e herdeiro de um caderno de receitas que mais parece livro de rituais: toalha quente no ponto, óleo de barba feito em casa e navalha amolada como quem afia um argumento.</p>
+        <p class="body" data-rv style="--rv-d:.32s">Mais de uma década depois, a casa mantém o mesmo compasso — café passado, jazz no vinyl, cadeira de couro e a convicção de que um bom corte não segue moda: segue a estrutura do rosto de quem o usa.</p>
+        <div class="stats" data-rv style="--rv-d:.4s">
+          <div class="stat"><span class="stat__num" data-count="12">0</span><span class="stat__label">Anos de casa</span></div>
+          <div class="stat"><span class="stat__num" data-count="9400" data-suffix="+">0</span><span class="stat__label">Cortes &amp; barbas</span></div>
+          <div class="stat"><span class="stat__num" data-count="4.9" data-decimals="1">0</span><span class="stat__label">Nota dos clientes</span></div>
+        </div>
+        <p class="sign" data-rv style="--rv-d:.46s">— Família Bianchinni</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SERVIÇOS ================= -->
+  <section class="section section--soft" id="servicos">
+    <div class="container">
+      <div class="services__head">
+        <p class="kicker" data-rv><span class="kicker__num">02</span> Serviços</p>
+        <h2 class="h2" data-rv style="--rv-d:.1s">O cardápio<br>da navalha</h2>
+        <p class="lead" data-rv style="--rv-d:.18s">Três capítulos, um único padrão: precisão, produto bom e nenhuma pressa.</p>
+        <div class="orn" data-rv style="--rv-d:.26s" aria-hidden="true"><i></i></div>
+      </div>
+
+      <div class="tabs" role="tablist" aria-label="Categorias de serviços" data-rv style="--rv-d:.3s">
+        <button class="tab is-active" role="tab" id="tab-cortes" aria-controls="panel-cortes" aria-selected="true">Cortes</button>
+        <button class="tab" role="tab" id="tab-barba" aria-controls="panel-barba" aria-selected="false" tabindex="-1">Barba &amp; Bigode</button>
+        <button class="tab" role="tab" id="tab-acabamento" aria-controls="panel-acabamento" aria-selected="false" tabindex="-1">Acabamento</button>
+      </div>
+
+      <div class="menu" id="panel-cortes" role="tabpanel" aria-labelledby="tab-cortes" data-rv style="--rv-d:.36s">
+        <article class="dish">
+          <div class="dish__head"><h3 class="dish__name">Corte Clássico</h3><span class="dish__dots" aria-hidden="true"></span><span class="dish__price" contenteditable="true" spellcheck="false" data-price="corte-classico" title="Clique para editar o preço">R$ 65</span></div>
+          <p class="dish__meta"><span>Tesoura e máquina na régua da casa, com finalização e pomada.</span><span class="dish__time">45 min</span></p>
+        </article>
+        <article class="dish">
+          <div class="dish__head"><h3 class="dish__name">Degradê da Casa</h3><span class="dish__dots" aria-hidden="true"></span><span class="dish__price" contenteditable="true" spellcheck="false" data-price="corte-degrade" title="Clique para editar o preço">R$ 70</span></div>
+          <p class="dish__meta"><span>Transição navalhada, limpa e milimétrica, na régua que virou marca da casa.</span><span class="dish__time">50 min</span></p>
+        </article>
+        <article class="dish">
+          <div class="dish__head"><h3 class="dish__name">O Ritual Completo</h3><span class="dish__dots" aria-hidden="true"></span><span class="dish__price" contenteditable="true" spellcheck="false" data-price="ritual-completo" title="Clique para editar o preço">R$ 115</span></div>
+          <p class="dish__meta"><span>Corte, barba na navalha, toalha quente e um café — sem pressa alguma.</span><span class="dish__time">1h20</span></p>
+        </article>
+        <article class="dish">
+          <div class="dish__head"><h3 class="dish__name">Corte Infantil</h3><span class="dish__dots" aria-hidden="true"></span><span class="dish__price" contenteditable="true" spellcheck="false" data-price="corte-infantil" title="Clique para editar o preço">R$ 45</span></div>
+          <p class="dish__meta"><span>Para os herdeiros, até 10 anos — com paciência dobrada.</span><span class="dish__time">30 min</span></p>
+        </article>
+      </div>
+
+      <div class="menu" id="panel-barba" role="tabpanel" aria-labelledby="tab-barba" hidden>
+        <article class="dish">
+          <div class="dish__head"><h3 class="dish__name">Barba na Navalha</h3><span class="dish__dots" aria-hidden="true"></span><span class="dish__price" contenteditable="true" spellcheck="false" data-price="barba-navalha" title="Clique para editar o preço">R$ 60</span></div>
+          <p class="dish__meta"><span>Toalha quente, óleo da casa e navalha amolada à mão.</span><span class="dish__time">40 min</span></p>
+        </article>
+        <article class="dish">
+          <div class="dish__head"><h3 class="dish__name">Barba Desenhada</h3><span class="dish__dots" aria-hidden="true"></span><span class="dish__price" contenteditable="true" spellcheck="false" data-price="barba-desenhada" title="Clique para editar o preço">R$ 50</span></div>
+          <p class="dish__meta"><span>Contorno e alinhamento com navalha, respeitando o desenho natural.</span><span class="dish__time">30 min</span></p>
+        </article>
+        <article class="dish">
+          <div class="dish__head"><h3 class="dish__name">Bigode Clássico</h3><span class="dish__dots" aria-hidden="true"></span><span class="dish__price" contenteditable="true" spellcheck="false" data-price="bigode" title="Clique para editar o preço">R$ 35</span></div>
+          <p class="dish__meta"><span>Modelagem com cera e acabamento fino — handlebar incluído, se quiser.</span><span class="dish__time">20 min</span></p>
+        </article>
+        <article class="dish">
+          <div class="dish__head"><h3 class="dish__name">Ritual da Toalha Quente</h3><span class="dish__dots" aria-hidden="true"></span><span class="dish__price" contenteditable="true" spellcheck="false" data-price="toalha-quente" title="Clique para editar o preço">R$ 40</span></div>
+          <p class="dish__meta"><span>Vapor, óleo de barba e massagem facial — vinte minutos de pausa.</span><span class="dish__time">25 min</span></p>
+        </article>
+      </div>
+
+      <div class="menu" id="panel-acabamento" role="tabpanel" aria-labelledby="tab-acabamento" hidden>
+        <article class="dish">
+          <div class="dish__head"><h3 class="dish__name">Camuflagem de Grisalhos</h3><span class="dish__dots" aria-hidden="true"></span><span class="dish__price" contenteditable="true" spellcheck="false" data-price="camuflagem" title="Clique para editar o preço">R$ 55</span></div>
+          <p class="dish__meta"><span>Tom natural, sem exagero — só quem sabe percebe.</span><span class="dish__time">30 min</span></p>
+        </article>
+        <article class="dish">
+          <div class="dish__head"><h3 class="dish__name">Sobrancelha na Navalha</h3><span class="dish__dots" aria-hidden="true"></span><span class="dish__price" contenteditable="true" spellcheck="false" data-price="sobrancelha" title="Clique para editar o preço">R$ 20</span></div>
+          <p class="dish__meta"><span>Limpeza masculina, discreta, sem deixar marca.</span><span class="dish__time">15 min</span></p>
+        </article>
+        <article class="dish">
+          <div class="dish__head"><h3 class="dish__name">Retoque de Nuca</h3><span class="dish__dots" aria-hidden="true"></span><span class="dish__price" contenteditable="true" spellcheck="false" data-price="nuca" title="Clique para editar o preço">R$ 20</span></div>
+          <p class="dish__meta"><span>Entre um corte e outro, a casa segura a sua aparência.</span><span class="dish__time">15 min</span></p>
+        </article>
+        <article class="dish">
+          <div class="dish__head"><h3 class="dish__name">Lavagem &amp; Pomada</h3><span class="dish__dots" aria-hidden="true"></span><span class="dish__price" contenteditable="true" spellcheck="false" data-price="pomada" title="Clique para editar o preço">R$ 25</span></div>
+          <p class="dish__meta"><span>Finalização com o produto da casa e orientação de uso.</span><span class="dish__time">10 min</span></p>
+        </article>
+      </div>
+
+      <p class="menu__note" data-rv>Clique sobre qualquer preço para ajustá-lo — a alteração fica salva neste navegador.</p>
+    </div>
+  </section>
+
+  <!-- ================= GALERIA ================= -->
+  <section class="section" id="galeria">
+    <div class="container">
+      <p class="kicker" data-rv><span class="kicker__num">03</span> Galeria</p>
+      <h2 class="h2" data-rv style="--rv-d:.1s">Retratos da casa</h2>
+      <!-- Substitua pelos retratos reais; as legendas ficam no data-caption -->
+      <div class="gallery__grid" data-rv style="--rv-d:.2s">
+        <button class="gitem g1" data-caption="O ritual da toalha quente" aria-label="Ampliar foto: o ritual da toalha quente">
+          <figure><img src="https://picsum.photos/seed/bn-g1/900/1100.jpg" alt="Ritual da toalha quente" loading="lazy"><figcaption aria-hidden="true"><b>Nº 01</b><span>O ritual da toalha quente</span></figcaption></figure>
+        </button>
+        <button class="gitem g2" data-caption="Fio de navalha, amolado à mão" aria-label="Ampliar foto: fio de navalha">
+          <figure><img src="https://picsum.photos/seed/bn-g2/800/620.jpg" alt="Fio de navalha" loading="lazy"><figcaption aria-hidden="true"><b>Nº 02</b><span>Fio de navalha</span></figcaption></figure>
+        </button>
+        <button class="gitem g3" data-caption="A cadeira de 1962" aria-label="Ampliar foto: a cadeira de 1962">
+          <figure><img src="https://picsum.photos/seed/bn-g3/640/1000.jpg" alt="Cadeira de barbeiro de 1962" loading="lazy"><figcaption aria-hidden="true"><b>Nº 03</b><span>A cadeira de 1962</span></figcaption></figure>
+        </button>
+        <button class="gitem g4" data-caption="Pomada, pente e paciência" aria-label="Ampliar foto: pomada, pente e paciência">
+          <figure><img src="https://picsum.photos/seed/bn-g4/800/480.jpg" alt="Pente e pomada" loading="lazy"><figcaption aria-hidden="true"><b>Nº 04</b><span>Pomada, pente e paciência</span></figcaption></figure>
+        </button>
+        <button class="gitem g5" data-caption="O degradê da casa" aria-label="Ampliar foto: o degradê da casa">
+          <figure><img src="https://picsum.photos/seed/bn-g5/1000/560.jpg" alt="Degradê sendo finalizado" loading="lazy"><figcaption aria-hidden="true"><b>Nº 05</b><span>O degradê da casa</span></figcaption></figure>
+        </button>
+        <button class="gitem g6" data-caption="Sala de espera, café passado" aria-label="Ampliar foto: sala de espera">
+          <figure><img src="https://picsum.photos/seed/bn-g6/1000/560.jpg" alt="Sala de espera da barbearia" loading="lazy"><figcaption aria-hidden="true"><b>Nº 06</b><span>Sala de espera, café passado</span></figcaption></figure>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= AGENDAMENTO ================= -->
+  <section class="section booking" id="agendar">
+    <svg class="crest" aria-hidden="true"><use href="#crest"/></svg>
+    <div class="container booking__grid">
+      <div class="booking__text">
+        <p class="kicker" data-rv><span class="kicker__num">04</span> Agendamento</p>
+        <h2 class="h2" data-rv style="--rv-d:.1s">Reserve a<br>sua cadeira</h2>
+        <p class="lead" data-rv style="--rv-d:.18s">Uma mensagem chega, a cadeira fica reservada e o resto é conosco.</p>
+        <p data-rv style="--rv-d:.24s">Atendemos com hora marcada para que ninguém espere — e o café da casa nunca demora. Prefere ligar? Também estamos do outro lado do telefone.</p>
+        <div class="booking__actions" data-rv style="--rv-d:.3s">
+          <a class="btn btn--solid btn--wa" href="#" data-wa>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3Z"/><path d="M9.2 8.8c-.3-.7-.6-.7-.9-.7h-.6c-.3 0-.7.1-1 .5-.4.4-.9 1-.9 2.3s.9 2.7 1.1 2.9c.1.2 1.9 3 4.7 4.1 2.3.9 2.8.7 3.3.7.5-.1 1.6-.7 1.9-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3l-1.9-.9c-.3-.1-.5-.2-.7.1l-.9 1.1c-.2.2-.4.2-.7.1-.3-.2-1.1-.4-2.2-1.4-.8-.7-1.3-1.6-1.5-1.9-.2-.3 0-.5.1-.6l.5-.6c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5L9.2 8.8Z" fill="currentColor" stroke="none"/></svg>
+            <span>Agendar pelo WhatsApp</span>
+          </a>
+          <a class="btn btn--ghost" href="#" data-tel-link><span>Ligar para a casa</span></a>
+        </div>
+      </div>
+      <div class="steps" data-rv style="--rv-d:.25s">
+        <div class="step"><i aria-hidden="true"><b>1</b></i><div><h3>Escolha o serviço</h3><p>Do corte clássico ao ritual completo — o cardápio está logo acima.</p></div></div>
+        <div class="step"><i aria-hidden="true"><b>2</b></i><div><h3>Chame no WhatsApp</h3><p>Diga o dia e a hora que preferir; confirmamos na hora.</p></div></div>
+        <div class="step"><i aria-hidden="true"><b>3</b></i><div><h3>Sente-se na cadeira</h3><p>Café passado, toalha quente e o resto do tempo é seu.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= LOCAL & HORÁRIOS ================= -->
+  <section class="section" id="contato">
+    <div class="container local">
+      <div>
+        <p class="kicker" data-rv><span class="kicker__num">05</span> Visite a casa</p>
+        <h2 class="h2" data-rv style="--rv-d:.1s">Onde o tempo<br>passa devagar</h2>
+        <p class="lead" data-rv style="--rv-d:.18s">Porta de rua, placa de latão e o cheiro de talco clássico — impossível não encontrar.</p>
+
+        <div class="addr" data-rv style="--rv-d:.24s">
+          <a href="#" data-addr-link target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span><b>Endereço</b><span data-addr>Carregando…</span></span>
+          </a>
+          <a href="#" data-tel-link>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.9.32 1.78.59 2.63a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.45-1.11a2 2 0 0 1 2.11-.45c.85.27 1.73.47 2.63.59A2 2 0 0 1 22 16.92z"/></svg>
+            <span><b>Telefone</b><span data-phone>—</span></span>
+          </a>
+          <a href="#" data-mail-link>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            <span><b>E-mail</b><span data-mail>—</span></span>
+          </a>
+        </div>
+
+        <div class="hours" data-rv style="--rv-d:.3s">
+          <h3>Horário de funcionamento</h3>
+          <table>
+            <tbody>
+              <tr class="is-off"><td>Segunda-feira</td><td>Fechado</td></tr>
+              <tr><td>Terça a sexta</td><td>09h — 19h</td></tr>
+              <tr><td>Sábado</td><td>08h — 18h</td></tr>
+              <tr class="is-off"><td>Domingo</td><td>Fechado</td></tr>
+            </tbody>
+          </table>
+          <p class="status" id="openStatus" role="status"><i aria-hidden="true"></i><span>Verificando horário…</span></p>
+        </div>
+      </div>
+
+      <div class="map" data-rv style="--rv-d:.2s">
+        <div class="map__tag"><b>BIANCHINNI</b><span>barbearia — desde 2012</span></div>
+        <iframe id="mapFrame" src="about:blank" loading="lazy" title="Mapa com a localização da Bianchinni Barbearia" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= RODAPÉ ================= -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <svg class="crest" role="img" aria-label="Brasão da Bianchinni Barbearia"><use href="#crest"/></svg>
+      <p class="footer__word">BIANCHINNI BARBEARIA</p>
+      <p class="footer__tag">Tradição, navalha e bom café — desde 2012.</p>
+      <div class="orn" aria-hidden="true"><i></i></div>
+      <nav class="footer__nav" aria-label="Navegação do rodapé">
+        <a href="#tradicao">Tradição</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#galeria">Galeria</a>
+        <a href="#agendar">Agendar</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <div class="socials">
+        <a href="#" data-ig aria-label="Instagram da Bianchinni Barbearia" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="#" data-fb aria-label="Facebook da Bianchinni Barbearia" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7h2.4l.4-2.8h-2.8V9.4c0-.8.3-1.4 1.5-1.4h1.4V5.6c-.3 0-1.2-.1-2.2-.1-2.2 0-3.6 1.3-3.6 3.7v2H8.2V14h2.4v7h2.9Z"/></svg>
+        </a>
+        <a href="#" data-wa aria-label="WhatsApp da Bianchinni Barbearia" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3Z"/><path d="M9.2 8.8c-.3-.7-.6-.7-.9-.7h-.6c-.3 0-.7.1-1 .5-.4.4-.9 1-.9 2.3s.9 2.7 1.1 2.9c.1.2 1.9 3 4.7 4.1 2.3.9 2.8.7 3.3.7.5-.1 1.6-.7 1.9-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3l-1.9-.9c-.3-.1-.5-.2-.7.1l-.9 1.1c-.2.2-.4.2-.7.1-.3-.2-1.1-.4-2.2-1.4-.8-.7-1.3-1.6-1.5-1.9-.2-.3 0-.5.1-.6l.5-.6c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5L9.2 8.8Z" fill="currentColor" stroke="none"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© <span id="year">2025</span> Bianchinni Barbearia — Todos os direitos reservados.</p>
+      <p><em>Feito à mão, como um bom corte.</em></p>
+    </div>
+  </div>
+</footer>
+
+<!-- botão flutuante de WhatsApp -->
+<a class="wa-float" href="#" data-wa aria-label="Conversar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3Z"/><path d="M9.2 8.8c-.3-.7-.6-.7-.9-.7h-.6c-.3 0-.7.1-1 .5-.4.4-.9 1-.9 2.3s.9 2.7 1.1 2.9c.1.2 1.9 3 4.7 4.1 2.3.9 2.8.7 3.3.7.5-.1 1.6-.7 1.9-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3l-1.9-.9c-.3-.1-.5-.2-.7.1l-.9 1.1c-.2.2-.4.2-.7.1-.3-.2-1.1-.4-2.2-1.4-.8-.7-1.3-1.6-1.5-1.9-.2-.3 0-.5.1-.6l.5-.6c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5L9.2 8.8Z" fill="currentColor" stroke="none"/></svg>
+</a>
+
+<!-- lightbox da galeria -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visualização de foto da galeria">
+  <button class="lb-btn lb-close" id="lbClose" aria-label="Fechar visualização">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 5l14 14M19 5 5 19"/></svg>
+  </button>
+  <button class="lb-btn lb-prev" id="lbPrev" aria-label="Foto anterior">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+  </button>
+  <figure>
+    <img id="lbImg" src="" alt="">
+    <figcaption><b id="lbNum"></b><span id="lbCap"></span></figcaption>
+  </figure>
+  <button class="lb-btn lb-next" id="lbNext" aria-label="Próxima foto">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+  </button>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
